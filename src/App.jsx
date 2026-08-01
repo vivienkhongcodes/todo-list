@@ -22,7 +22,7 @@ function App() {
 
       /* Update React state by returning a new array, never change the old array. */
       setTodoList((previousTodoList) => {
-        return [...previousTodoList, newTodo];
+        return [newTodo, ...previousTodoList];
       });
     }
 
