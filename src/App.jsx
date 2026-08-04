@@ -18,6 +18,7 @@ function App() {
       const newTodo = {
         id: Date.now(),
         title: todoTitle,
+        isCompleted: false,
       };  
 
       /* Update React state by returning a new array, never change the old array. */
@@ -25,6 +26,21 @@ function App() {
         return [newTodo, ...previousTodoList];
       });
     }
+
+    function completeTodo(id) {
+      const updatedTodoList = todoList.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isCompleted: true,
+          };
+        }
+
+        return todo;
+      });
+
+    setTodoList(updatedTodoList);
+  }
 
   return (
   <div>
@@ -35,7 +51,10 @@ function App() {
     right of the = is the variable in App.jsx that contains the array
     render the TodoList component and give it the todoList array.
     */}
-    <TodoList todoList={todoList} />
+    <TodoList 
+      todoList={todoList}
+      onCompleteTodo={completeTodo} 
+    />
   </div>
   );
 }
