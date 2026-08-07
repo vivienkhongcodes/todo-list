@@ -7,7 +7,6 @@ function TodoList({ todoList, onCompleteTodo }) {
     ) : (
 
       <ul>
-        {/* Keep the key prop here as it is still needed. */}
         {filteredTodoList.map(todo => (
           <TodoListItem 
             key={todo.id} 

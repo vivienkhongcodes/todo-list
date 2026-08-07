@@ -2,18 +2,11 @@ import { useState } from 'react';
 import TodoList from './TodoList.jsx';
 import TodoForm from './TodoForm.jsx';
 
-/* Data must become React state in order to not trigger a re-render. */
 import './App.css'
    
- /* 
-Implement useState inside the top of the App component.
-Use array destructuring to access the state value (todoList) and its accompanying state update function (setTodoList).
-Set useState's default value to todos.   
-*/  
 function App() {
   const [todoList, setTodoList] = useState([])
 
-    /* Create object before adding */
     function addTodo(todoTitle) {
       const newTodo = {
         id: Date.now(),
@@ -21,7 +14,6 @@ function App() {
         isCompleted: false,
       };  
 
-      /* Update React state by returning a new array, never change the old array. */
       setTodoList((previousTodoList) => {
         return [newTodo, ...previousTodoList];
       });
