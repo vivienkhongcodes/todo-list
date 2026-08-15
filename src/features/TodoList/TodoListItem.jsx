@@ -25,7 +25,7 @@ export default function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
 
     onUpdateTodo({
       ...todo,
-      title: finishEdit,
+      title: finalTitle,
     });
     
   }
