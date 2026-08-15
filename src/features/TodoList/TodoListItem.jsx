@@ -33,6 +33,8 @@ export default function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
     {isEditing ? (
     <form onSubmit={handleUpdate}>
       <TextInputWithLabel 
+        elementID={'editTodoTitle-${todo.id}'}
+        labelText="Todo"
         value={workingTitle} 
         onChange={handleEdit}
       />
@@ -56,7 +58,7 @@ export default function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
           checked={todo.isCompleted}
           onChange={() => onCompleteTodo(todo.id)}
       />
-      <span onClick={() => startEditing(true)}>{todo.title}</span>
+      <span onClick={startEditing}>{todo.title}</span>
     </>
   )}
 </li>
