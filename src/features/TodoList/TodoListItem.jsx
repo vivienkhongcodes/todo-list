@@ -21,9 +21,11 @@ export default function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
     if (!isEditing) return;
     event.preventDefault();
 
+    const finalTitle = finishEdit();
+
     onUpdateTodo({
       ...todo,
-      title: finishEdit(),
+      title: finishEdit,
     });
     
   }

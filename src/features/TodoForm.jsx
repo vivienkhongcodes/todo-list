@@ -8,7 +8,7 @@ function TodoForm({ onAddTodo }) {
   function handleAddTodo(event) {
     event.preventDefault();
 
-    if (!workingTodoTitle.trim()) {
+    if (!isValidTodoTitle(workingTodoTitle)) {
       return;
     }
 
