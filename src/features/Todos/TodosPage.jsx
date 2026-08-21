@@ -166,7 +166,8 @@ function TodosPage({ token }) {
         },
         credentials: 'include',
         body: JSON.stringify({
-          title: editedTodo.title,    
+          title: editedTodo.title,
+          isCompleted: editedTodo.isCompleted,    
         }),
       }); 
       

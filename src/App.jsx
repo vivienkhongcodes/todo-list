@@ -5,7 +5,7 @@ import Header from './shared/Header.jsx';
 import './App.css'
    
 function App() {
-  const [, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [token, setToken] = useState('');
   
   return (
