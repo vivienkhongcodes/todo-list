@@ -22,16 +22,18 @@ function TodosPage({ token }) {
           credentials: 'include',
         });
 
-        const data = await response.json();
-
-        if (response.ok) {
-          setTodoList(data.tasks || []);
-        } else if (response.status === 401) {
+        if (response.status === 401) {
           throw new Error('unauthorized');
-        } else {
+        }
+
+        if (!response.ok) {
           throw new Error('Failed to fetch todos');
         }
-      
+
+        const data = await response.json();
+
+        setTodoList(data.tasks || []);
+  
       } catch (error) {
         setError(error.message);
       } finally {
