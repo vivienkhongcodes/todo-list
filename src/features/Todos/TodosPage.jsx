@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from 'react';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 
 import TodoForm from './TodoForm.jsx';
 import TodoList from './TodoList/TodoList';
@@ -12,7 +13,8 @@ import {
   TODO_ACTIONS,
 } from '../../reducers/todoReducer';
 
-function TodosPage({ token }) {
+function TodosPage() {
+  const { token } = useAuth();
   const [state, dispatch] = useReducer(todoReducer, initialTodoState);
 
   const {
@@ -27,7 +29,7 @@ function TodosPage({ token }) {
   } = state;
   
   const debouncedFilterTerm = useDebounce(filterTerm, 300);
-  
+      
   const handleFilterChange = (newTerm) => {
     dispatch({
       type: TODO_ACTIONS.SET_FILTER,
@@ -68,7 +70,7 @@ function TodosPage({ token }) {
           throw new Error('Failed to fetch todos');
         }
 
-        const data = await response.json();
+        const data = await response.json();        
 
         dispatch({
           type: TODO_ACTIONS.FETCH_SUCCESS,
