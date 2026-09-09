@@ -89,6 +89,7 @@ export function AuthProvider({ children }) {
   // Context value object
   const value = {
     email,
+    name: email,
     token,
     isAuthenticated: !!token,
     login,
