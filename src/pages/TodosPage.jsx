@@ -1,19 +1,24 @@
+import { useSearchParams } from 'react-router';
 import { useEffect, useReducer } from 'react';
-import { useAuth } from '../../contexts/AuthContext.jsx';
+import { useAuth } from '../contexts/AuthContext.jsx';
 
-import TodoForm from './TodoForm.jsx';
-import TodoList from './TodoList/TodoList';
-import SortBy from '../../shared/SortBy.jsx';
-import FilterInput from '../../shared/FilterInput.jsx';
-import useDebounce from '../../utils/useDebounce.js';
+import TodoForm from '../features/Todos/TodoForm.jsx';
+import TodoList from '../features/Todos/TodoList/TodoList.jsx';
+import SortBy from '../shared/SortBy.jsx';
+import FilterInput from '../shared/FilterInput.jsx';
+import StatusFilter from '../shared/StatusFilter.jsx';
+import useDebounce from '../utils/useDebounce.js';
 
 import {
   todoReducer,
   initialTodoState,
   TODO_ACTIONS,
-} from '../../reducers/todoReducer';
+} from '../reducers/todoReducer.js';
 
 function TodosPage() {
+  const [searchParams] = useSearchParams();
+  const statusFilter = searchParams.get("status") || "all";
+  
   const { token } = useAuth();
   const [state, dispatch] = useReducer(todoReducer, initialTodoState);
 
@@ -313,12 +318,15 @@ function TodosPage() {
         onFilterChange={handleFilterChange}
       />  
       
+      <StatusFilter />
+
       <TodoForm onAddTodo={addTodo} />
       <TodoList
         todoList={todoList}
         onCompleteTodo={completeTodo}
         onUpdateTodo={updateTodo}
         dataVersion={dataVersion}
+        statusFilter={statusFilter}
       /> 
     </div>
   );
