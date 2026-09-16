@@ -39,7 +39,7 @@ function LoginPage() {
   }
   
 return (
-  <form onSubmit={handleSubmit}>
+  <form className="login-form" onSubmit={handleSubmit}>
     {authError && <p>{authError}</p>}
 
     <label htmlFor="email">Email</label>

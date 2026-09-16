@@ -59,7 +59,7 @@ export default function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
         <input 
           type="checkbox" 
           checked={todo.isCompleted}
-          onChange={() => onCompleteTodo(todo.id)}
+          onChange={() => onCompleteTodo(todo.id, !todo.isCompleted)}
       />
       </label>
       <span onClick={startEditing}>{todo.title}</span>

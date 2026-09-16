@@ -3,7 +3,7 @@ function FilterInput({
   onFilterChange,    
 }) {
   return (
-    <div>
+    <div className="filter-input">
       <label htmlFor="filterInput">Search todos:</label> 
       <input
         id="filterInput" 
