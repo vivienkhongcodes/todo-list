@@ -1,0 +1,143 @@
+#root {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #5f7658;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #5f7658;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #a65f46;    
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #9aa596;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #5f7658;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: #a65f46;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+form,
+nav,
+select {
+  margin-bottom: 1rem;
+}
+
+input:focus,
+select:focus,
+button:focus,
+a:focus {
+  outline: 3px solid #a65f46;
+  outline-offset: 2px;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+form input {
+  display: block;
+  margin-bottom: 1.75rem;
+}
+
+.login-form {
+  max-width: 400px;
+}
+
+.login-form label,
+.login-form input,
+.login-form button {
+  display: block;
+}
+
+.login-form input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sort-controls label,
+.sort-controls select {
+  display: block;
+}
+
+.sort-controls label {
+  margin-bottom: 0.35rem;
+}
+
+.sort-controls select {
+  width: 240px;
+  margin-bottom: 1rem;
+}
+
+.filter-input label,
+.filter-input input {
+  display: block;
+}
+
+.filter-input label {
+  margin-bottom: 0.35rem;
+}
+
+.filter-input {
+  width: 280px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.status-filter label,
+.status-filter select {
+  display: block;
+}
+
+.status-filter label {
+  margin-bottom: 0.35rem;
+}
+
+.status-filter select {
+  width: 240px;
+  margin-bottom: 1rem;
+}
+
+.todo-form {
+  max-width: 400px;
+}
+
+.todo-form input{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.todo-form button {
+  display: block;
+}

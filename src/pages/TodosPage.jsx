@@ -162,12 +162,12 @@ function TodosPage() {
     
   }
 
-  async function completeTodo(id) {
+  async function completeTodo(id, isCompleted) {
     const originalTodo = todoList.find((todo) => todo.id === id);
     
     dispatch({
       type: TODO_ACTIONS.COMPLETE_TODO_START,
-      payload: { id },
+      payload: { id, isCompleted },
     });
 
     try {
@@ -180,7 +180,7 @@ function TodosPage() {
         },
         credentials: 'include',
         body: JSON.stringify({
-          isCompleted: true,
+          isCompleted,
         }),
       }); 
       
