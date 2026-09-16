@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <>
-      <h1>Todo List</h1>
+      <h1>Task List App</h1>
       <Navigation />
       {isAuthenticated && <Logoff />}
     </> 
