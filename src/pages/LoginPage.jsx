@@ -50,6 +50,7 @@ return (
       value={email}
       onChange={(event) => setEmail(event.target.value)}
       required
+      maxLength={100}
     />  
 
     <label htmlFor="password">Password</label>
@@ -60,6 +61,7 @@ return (
       value={password}
       onChange={(event) => setPassword(event.target.value)}
       required
+      maxLength={100}
     />
 
     <button type="submit" disabled={isLoggingOn}>

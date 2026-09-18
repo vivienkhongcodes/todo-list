@@ -251,7 +251,7 @@ function TodosPage() {
   return (
     <div>
        {error && (
-         <div>
+         <div className="error-message">
             <p>{error}</p>
             
             <button 
@@ -268,7 +268,7 @@ function TodosPage() {
        )}      
 
         {filterError && (
-          <div>
+          <div className="error-message">
             <p>{filterError}</p>
 
             <button 
@@ -294,7 +294,9 @@ function TodosPage() {
              </button>
             </div>  
         )}
-       {isTodoListLoading && <p>Loading todos...</p>}
+       {isTodoListLoading && (
+          <p className="loading-message">Loading todos...</p>
+        )}
 
       <SortBy 
         sortBy={sortBy}

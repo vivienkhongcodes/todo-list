@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
           error: `Authentication failed: ${data?.message}`,
         };
       }
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: 'Network error during login',
@@ -75,7 +75,7 @@ export function AuthProvider({ children }) {
       success: false,
       error: 'Logout failed',
     };
-    } catch (error) {
+    } catch {
       setEmail('');
       setToken('');
 
