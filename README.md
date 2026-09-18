@@ -1,5 +1,7 @@
 # Task List App
+## Project Description
 A visual task tracker designed for busy multitaskers who are easily distracted and want a simple way to stay focused, organized, and accountable throughout the day.
+I am most proud of the function and styling of my Task List App. I wanted to keep it calm and pleasing visually while making it useful. Seeing it grow from its bare-bones beginnings to this functional stage is very fulfilling. I'm proud not only of what the app can do now, but of how much I learned while building it.
 ## Features
 - User login and logout
 - Protected Todo and Profile pages
